@@ -6,4 +6,7 @@ tmpfile="tmp"
 gpgout="tmp.gpg"
 gpgverify="gpgtmp"
 EDITOR="vim"
+update_delay=1
+
+
 source settings.d/*
