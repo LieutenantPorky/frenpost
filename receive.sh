@@ -23,7 +23,7 @@ keys=$(curl --silent $serverAdd/post_id)
            cat $gpgdecrypted
         else
             echo "binary data"
-            cp "$1" "$2";
+           binproc $gpgdecrypted "$i"
 
         fi
         rm $gpgdecrypted
