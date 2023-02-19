@@ -5,6 +5,8 @@ recepients=""
 tmpfile="tmp"
 gpgout="tmp.gpg"
 gpgverify="gpgtmp"
+gpgdecrypted="gpgdec"
+function imgproc { cp $1 $2; }
 EDITOR="vim"
 update_delay=1
 

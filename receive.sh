@@ -14,8 +14,18 @@ keys=$(curl --silent $serverAdd/post_id)
         echo ""
         echo "###############"
         echo "key: $i"
-        message=$(curl --silent $serverAdd/$i | gpg -d --output - 2> $gpgverify)
-        echo "$message"
+        curl --silent $serverAdd/$i | gpg -d --output $gpgdecrypted 2> $gpgverify
+
+        if file $gpgdecrypted | grep -q "image"; then
+           echo "image"
+           imgproc $gpgdecrypted "$i"
+        elif file $gpgdecrypted | grep -q "text"; then
+           echo "$message"
+        else
+            echo "binary data"
+        fi
+        rm $gpgdecrypted
+
         signed=$(grep "Good signature" $gpgverify)
         echo "#-------------#"
         echo "$signed"
