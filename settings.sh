@@ -13,15 +13,40 @@ gpgdecrypted="gpgdec"
 
 #where to save images
 imgdir="pictures"
-function imgproc {
+
+#public key to use to encrypt files locally
+self="Ben Dover"
+
+#use this function to save downloaded pictures as encrypted
+function encryptimgproc {
+    mkdir -p "$imgdir"
+    gpg --output "$imgdir/$2" -r "$self" -e "$1"
+}
+
+function unsafeimgproc {
     mkdir -p "$imgdir"
     cp "$1" "$imgdir/$2"; }
 
+function imgproc {
+    encryptimgproc "$@"
+}
+
 #where to save other binary files
 bindir="other"
-function binproc {
+
+#use this function to save downloaded files as encrypted
+function encryptbinproc {
+    mkdir -p "$bindir"
+    gpg --output "$bindir/$2" -r "$self" -e "$1"
+}
+
+function unsafebinproc {
     mkdir -p "$bindir"
     cp "$1" "$bindir/$2"; }
+
+function binproc {
+    encryptbinproc "$@"
+}
 
 EDITOR="vim"
 update_delay=1
