@@ -37,6 +37,7 @@ bindir="other"
 #use this function to save downloaded files as encrypted
 function encryptbinproc {
     mkdir -p "$bindir"
+    rm -f "$bindir/$2"
     gpg --output "$bindir/$2" -r "$self" -e "$1"
 }
 
