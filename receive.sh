@@ -19,7 +19,7 @@ keys=$(curl --silent $serverAdd/post_id)
 
         if file $gpgdecrypted | grep -q "image"; then
            if [ -n "$signed" ]; then
-              echo "image sent by $signed"
+              echo "image sent"
               imgproc $gpgdecrypted "$i"
            else
                echo "someone's a sussy baka and tried to send an unsigned image!"
@@ -28,7 +28,7 @@ keys=$(curl --silent $serverAdd/post_id)
            cat $gpgdecrypted
         else
            if [ -n "$signed" ]; then
-              echo "binary data"
+              echo "binary data sent"
               binproc $gpgdecrypted "$i"
            else
                echo "someone's a sussy baka and tried to send an unsigned image!"
