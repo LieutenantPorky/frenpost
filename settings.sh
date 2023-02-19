@@ -20,6 +20,7 @@ self="Ben Dover"
 #use this function to save downloaded pictures as encrypted
 function encryptimgproc {
     mkdir -p "$imgdir"
+    rm -f "$imgdir/$2"
     gpg --output "$imgdir/$2" -r "$self" -e "$1"
 }
 
