@@ -15,7 +15,7 @@ gpgdecrypted="gpgdec"
 imgdir="pictures"
 function imgproc {
     mkdir -p "$imgdir"
-    cp $1 $imgdir/$2; }
+    cp "$1" "$imgdir/$2"; }
 
 #where to save other binary files
 bindir="other"
