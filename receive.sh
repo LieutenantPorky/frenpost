@@ -20,7 +20,8 @@ keys=$(curl --silent $serverAdd/post_id)
            echo "image"
            imgproc $gpgdecrypted "$i"
         elif file $gpgdecrypted | grep -q "text"; then
-           echo "$message"
+           echo "susamongus"
+           cat $gpgdecrypted
         else
             echo "binary data"
         fi
