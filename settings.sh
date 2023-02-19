@@ -48,6 +48,11 @@ function binproc {
     encryptbinproc "$@"
 }
 
+#What to do with text
+function textproc {
+    cat "$1"
+}
+
 EDITOR="vim"
 update_delay=1
 

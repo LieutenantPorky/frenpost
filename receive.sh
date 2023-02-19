@@ -25,7 +25,7 @@ keys=$(curl --silent $serverAdd/post_id)
                echo "someone's a sussy baka and tried to send an unsigned image!"
            fi
         elif file $gpgdecrypted | grep -q "text"; then
-           cat $gpgdecrypted
+           textproc $gpgdecrypted
         else
            if [ -n "$signed" ]; then
               echo "binary data sent"
