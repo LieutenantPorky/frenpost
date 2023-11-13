@@ -10,6 +10,8 @@ tmpfile="tmp"
 gpgout="tmp.gpg"
 gpgverify="gpgtmp"
 gpgdecrypted="gpgdec"
+tmpcheck="tmpcheck"
+tmpcheck2="tmpcheck2"
 
 #where to save images
 imgdir="pictures"
