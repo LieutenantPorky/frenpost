@@ -8,6 +8,8 @@ recepients=""
 
 tmpfile="tmp"
 gpgout="tmp.gpg"
+tmpcheck="tmpcheck"
+tmpcheck2="tmpcheck2"
 gpgverify="gpgtmp"
 gpgdecrypted="gpgdec"
 
