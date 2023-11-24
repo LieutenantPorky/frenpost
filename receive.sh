@@ -12,8 +12,10 @@ keys=$(curl --silent $serverAdd/post_id)
         fi
         printed_keys="$i:$printed_keys"
         echo ""
+	echo -e "\033[32;1m"
         echo "###############"
         echo "key: $i"
+	echo -e "\033[0m"
         curl --silent $serverAdd/$i | gpg -d --output $gpgdecrypted 2> $gpgverify
         signed=$(grep "Good signature" $gpgverify)
 
